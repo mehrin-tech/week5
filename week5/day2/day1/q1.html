@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fetchButton()">click me</button>
+    <p id="response"></p>
+
+    <script>
+        function fetchButton(){
+            fetch('http://localhost:3000')
+            .then(res=>res.text())
+            .then(data=>{
+                document.getElementById('response').innerText=data
+            })
+            .catch(err=>{
+                document.getElementById('response').innerText='failed'
+            })
+        }
+    </script>
+</body>
+</html>
+
